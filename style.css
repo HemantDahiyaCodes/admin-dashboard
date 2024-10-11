@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --nav-background-color: white;
+  --aside-background-color: #ba23db;
+}
+
+.grid-container {
+  min-height: 150vh;
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 20% 80%;
+  grid-template-areas:
+    "side nav"
+    "side main";
+}
+
+/* Navbar styling */
+nav {
+  grid-area: nav;
+  background-color: var(--nav-background-color);
+  box-shadow: 1px 0px 5px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+nav .search-profile {
+  height: 40%;
+  width: 100%;
+  display: flex;
+}
+
+/* Styling search section of navbar */
+nav .search {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.search img {
+  height: 80%;
+  width: 10%;
+}
+
+.search input {
+  width: 85%;
+  height: 90%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-family: roboto;
+  font-size: 1rem;
+  padding-left: 1rem;
+  background-color: lightseagreen;
+  color: white;
+}
+input:hover {
+  background-color: darkcyan;
+}
+input::placeholder {
+  color: white;
+}
+
+/* Styling the profile section of navbar */
+nav .profile {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.profile img {
+  height: 80%;
+  width: 15%;
+}
+
+.profile p {
+  font-family: roboto;
+  font-size: 1rem;
+  text-align: start;
+}
+
+/* Second section of the navbar styling */
+nav .profile-links {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-links .profile-image {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 95%;
+  margin-left: 1rem;
+}
+
+.profile-image p {
+  font-size: 2rem;
+  font-family: roboto;
+}
+
+.profile-image p::first-letter {
+  font-size: 3rem;
+}
+
+.profile-links .links {
+  height: 100%;
+  width: 80%;
+}
+
+/* Links styling */
+ul,
+li {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  border: none;
+  padding: 1rem;
+  width: 70%;
+  background-color: skyblue;
+  border-radius: 10px;
+  font-family: roboto;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: blue;
+  color: white;
+}
+
+/* Sidebar styling */
+aside {
+  grid-area: side;
+  background-color: var(--aside-background-color);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 5px black;
+}
+
+aside .heading {
+  height: 10%;
+  width: 100%;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-family: roboto;
+  color: white;
+}
+
+aside .icons-container {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+aside .settings-container {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+aside .icons-container .icon {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+aside .icons-container .icon:hover {
+  background-color: white;
+  transition: 0.3s;
+}
+aside .icons-container .icon img {
+  height: 100%;
+  width: 10%;
+  margin-left: 1rem;
+}
+
+aside .icons-container .icon p {
+  font-family: roboto;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.settings-container .icon {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.settings-container .icon:hover {
+  background-color: white;
+  transition: 0.3s;
+}
+
+.settings-container .icon img {
+  height: 100%;
+  width: 10%;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.settings-container p {
+  font-size: 1rem;
+  font-family: roboto;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Main content styling */
+main {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: "cards side";
+}
+
+.cards {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "card-one card-two"
+    "card-three card-four"
+    "card-five card-six";
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "announce"
+    "trending";
+}
+
+.announce {
+  grid-area: announce;
+  border: 0px 1px 1px 1px solid black;
+  box-shadow: 0px 2px 5px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: roboto;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.trending {
+  grid-area: trending;
+  border: 0px 1px 1px 1px solid black;
+  box-shadow: 0px 2px 5px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: roboto;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Styling the announcement section */
+.announce .info {
+  padding: 1rem;
+  font-family: roboto;
+}
+.announce .info:hover {
+  background-color: burlywood;
+}
+.info h4 {
+  font-size: 1.5rem;
+}
+
+.info p {
+  font-size: 1rem;
+}
+
+/* Main cards styling */
+.card{
+  padding: 1rem;
+  box-shadow: 3px 3px 8px black;
+  border-left: 5px solid yellow;
+  border-bottom: 5px solid yellow;
+  border-right: 5px solid yellow;
+  border-radius: 10px;
+}
